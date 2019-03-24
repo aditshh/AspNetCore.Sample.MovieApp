@@ -33,7 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Price)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Rating)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -41,7 +43,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReleaseDate)
@@ -53,8 +55,10 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
